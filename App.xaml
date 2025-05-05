@@ -37,7 +37,7 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#E57D8E98"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
-                    <Setter Property="BorderBrush" Value="#F5B0B0"/>
+                    <Setter Property="BorderBrush" Value="#a5bec1"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -69,7 +69,7 @@
                         <Grid x:Name="Root" SnapsToDevicePixels="true" ClipToBounds="True">
                             <Border x:Name="PART_Track"
                                     Background="{TemplateBinding Background}"
-                                    BorderBrush="#ccc"
+                                    BorderBrush="#8e8e8e"
                                     BorderThickness="1"
                                     CornerRadius="4"/>
                             <Canvas IsHitTestVisible="False">

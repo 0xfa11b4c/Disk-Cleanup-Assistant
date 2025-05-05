@@ -20,7 +20,7 @@
                 Click="CloseButton_Click"
                 Panel.ZIndex="1"/>
 
-        <Border CornerRadius="18" Background="#373f44" Padding="15" Opacity="0.97">
+        <Border CornerRadius="18" Background="#373f44" Padding="15" Opacity="0.90">
             <StackPanel Orientation="Vertical" Margin="0,20,0,10" VerticalAlignment="Top">
 
                 <TextBlock Text="Disk Cleanup Assistant"
@@ -48,20 +48,34 @@
                             Foreground="#E6E6E6"
                             FontSize="13"
                             FontWeight="SemiBold"
-                            HorizontalAlignment="Center"
+                            HorizontalAlignment="Right"
                             Margin="0,2,0,0"/>
                     </StackPanel>
                 </Border>
 
                 <Border CornerRadius="12" BorderThickness="1" BorderBrush="#E57D8E98" Padding="10" Margin="0 0 0 25">
                     <StackPanel>
-                        <TextBlock Text="Cleanup Categories" Foreground="#D0D0D0" FontWeight="SemiBold" Margin="0 0 0 5"/>
-                        <CheckBox Content="Temporary Files" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckTemp" Margin="0,2"/>
-                        <CheckBox Content="Cache Files" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckCache" Margin="0,2"/>
-                        <CheckBox Content="Log Files" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckLog" Margin="0,2"/>
-                        <CheckBox Content="Recycle Bin" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckRecycle" Margin="0,2"/>
+                        <TextBlock Text="Cleanup Categories" Foreground="#D0D0D0" FontWeight="SemiBold" Margin="0 0 0 10"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <CheckBox Content="Temporary Files" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckTemp" Margin="0,2"/>
+                                <CheckBox Content="Cache Files (Not available)" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckCache" Margin="0,2"/>
+                                <CheckBox Content="Log Files (Not available)" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckLog" Margin="0,2"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <CheckBox Content="Recycle Bin" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckRecycle" Margin="0,2"/>
+                                <CheckBox Content="Windows Update Cache" IsChecked="True" Foreground="White" Background="#373f44" Name="CheckWindowsCache" Margin="0,2"/>
+                            </StackPanel>
+                        </Grid>
                     </StackPanel>
                 </Border>
+
 
                 <Button Content="Clean Up Now"
                         Height="45"

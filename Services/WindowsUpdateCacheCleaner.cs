@@ -1,20 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Quick_Disk_Cleanup_Helper
+namespace Quick_Disk_Cleanup_Helper.Services
 {
-    public class TempCleaner
+    class WindowsUpdateCacheCleaner
     {
-        public static void ClearTemp()
+        public static void ClearWinUpdCache()
         {
             string[] pathsToClean =
             {
-                Path.GetTempPath(),
-                Environment.ExpandEnvironmentVariables("%TEMP%"),
-                Environment.ExpandEnvironmentVariables("%LocalAppData%\\Temp"),
-                @"C:\Windows\Temp",
-                @"C:\Windows\Prefetch",
-                Environment.ExpandEnvironmentVariables(@"%AppData%\Microsoft\Windows\Recent")
+                Environment.ExpandEnvironmentVariables("C:\\Windows\\SoftwareDistribution\\Download"),
+                @"C:\Windows\SoftwareDistribution\DataStore",
             };
 
             foreach (string path in pathsToClean)
@@ -22,6 +22,8 @@ namespace Quick_Disk_Cleanup_Helper
                 ClearDirectory(path);
             }
         }
+
+
 
         private static void ClearDirectory(string path)
         {
