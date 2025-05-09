@@ -69,6 +69,13 @@ namespace Quick_Disk_Cleanup_Helper
             int totalSteps = (clearTemp ? 1 : 0) + (clearRecycle ? 1 : 0) + (clearCache ? 1 : 0) + (clearLog ? 1 : 0) + (clearWinUpdCache ? 1 : 0);
             int currentStep = 0;
 
+            if (totalSteps == 0)
+            {
+                MessageBox.Show("Select at least one cleanup category.");
+                cleanupButton.IsEnabled = true;
+                return;
+            }
+
             long totalFreedBytes = 0;
 
             try
